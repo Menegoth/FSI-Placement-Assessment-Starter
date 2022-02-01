@@ -25,17 +25,15 @@ const gbPlusButton = document.getElementById("add-gb");
 
 //minus button pressing
 gbMinusButton.addEventListener("click", function(){
-    if (gb != 0) {
-        gb -= 1;
-        gbTotal.textContent = gb;
+    if (gb >= 0) {
+        gbTotal.textContent = --gb;
         updateTotal();
     }
 })
 
 //plus button pressing
 gbPlusButton.addEventListener("click", function(){
-    gb += 1;
-    gbTotal.textContent = gb;
+    gbTotal.textContent = ++gb;
     updateTotal();
 })
 
@@ -46,17 +44,15 @@ const ccPlusButton = document.getElementById("add-cc");
 
 //minus button pressing
 ccMinusButton.addEventListener("click", function(){
-    if (cc != 0) {
-        cc -= 1;
-        ccTotal.textContent = cc;
+    if (cc >= 0) {
+        ccTotal.textContent = --cc;
         updateTotal();
     }
 })
 
 //plus button pressing
 ccPlusButton.addEventListener("click", function(){
-    cc += 1;
-    ccTotal.textContent = cc;
+    ccTotal.textContent = ++cc;
     updateTotal();
 })
 
@@ -67,16 +63,14 @@ const sugarPlusButton = document.getElementById("add-sugar");
 
 //minus button pressing
 sugarMinusButton.addEventListener("click", function(){
-    if (sugar != 0) {
-        sugar -= 1;
-        sugarTotal.textContent = sugar;
+    if (sugar >= 0) {
+        sugarTotal.textContent = --sugar;
         updateTotal();
     }
 })
 
 //plus button pressing
 sugarPlusButton.addEventListener("click", function(){
-    sugar += 1;
-    sugarTotal.textContent = sugar;
+    sugarTotal.textContent = ++sugar;
     updateTotal();
 })
