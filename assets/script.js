@@ -1,27 +1,82 @@
-// HINT: You can delete this console.log after you no longer need it!
-console.log('JavaScript code has loaded!')
-// First, tell us your name
-let yourName = "Jane Doe" // HINT: Replace this with your own name!
+//change credits
+const credit = document.querySelector('#credit');
+credit.textContent = "Antonio Monteiro";
 
 // We'll use these variables to track the counts of each cookie type
 let gb = 0 // Gingerbread
 let cc = 0 // Chocolate Chip
 let sugar = 0 // Sugar Sprinkle
 
-// selecting the element with an id of credit
-const credit = document.querySelector('#credit')
-// selecting the element with an id of add-gb
-const gbPlusBtn = document.querySelector('#add-gb')
+//create variables for number displays
+const gbTotal = document.getElementById("qty-gb");
+const ccTotal = document.getElementById("qty-cc");
+const sugarTotal = document.getElementById("qty-sugar");
+const total = document.getElementById("qty-total");
 
-// Code to update name display
-credit.textContent = `Created by ${yourName}`
+//function to update total
+function updateTotal() {
+    total.textContent = gb + cc + sugar;
+}
 
-// Event listener for clicks on the "+" button for Gingerbread cookies
-gbPlusBtn.addEventListener('click', function() {
-// HINT: You can delete this console.log after you no longer need it!
-console.log('Gingerbread + button was clicked!')
+//gingerbread functionality
+//create both buttons
+const gbMinusButton = document.getElementById("minus-gb");
+const gbPlusButton = document.getElementById("add-gb");
 
-// TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
+//minus button pressing
+gbMinusButton.addEventListener("click", function(){
+    if (gb != 0) {
+        gb -= 1;
+        gbTotal.textContent = gb;
+        updateTotal();
+    }
 })
 
-// TODO: Hook up event listeners for the rest of the buttons
+//plus button pressing
+gbPlusButton.addEventListener("click", function(){
+    gb += 1;
+    gbTotal.textContent = gb;
+    updateTotal();
+})
+
+//chocolate chip functionality
+//buttons
+const ccMinusButton = document.getElementById("minus-cc");
+const ccPlusButton = document.getElementById("add-cc");
+
+//minus button pressing
+ccMinusButton.addEventListener("click", function(){
+    if (cc != 0) {
+        cc -= 1;
+        ccTotal.textContent = cc;
+        updateTotal();
+    }
+})
+
+//plus button pressing
+ccPlusButton.addEventListener("click", function(){
+    cc += 1;
+    ccTotal.textContent = cc;
+    updateTotal();
+})
+
+//sugar sprinkle chip functionality
+//buttons
+const sugarMinusButton = document.getElementById("minus-sugar");
+const sugarPlusButton = document.getElementById("add-sugar");
+
+//minus button pressing
+sugarMinusButton.addEventListener("click", function(){
+    if (sugar != 0) {
+        sugar -= 1;
+        sugarTotal.textContent = sugar;
+        updateTotal();
+    }
+})
+
+//plus button pressing
+sugarPlusButton.addEventListener("click", function(){
+    sugar += 1;
+    sugarTotal.textContent = sugar;
+    updateTotal();
+})
